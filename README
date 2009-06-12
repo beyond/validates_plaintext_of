@@ -1,0 +1,16 @@
+ValidatesPlaintextOf
+====================
+
+HTMLタグが含まれているとエラーを出します。
+
+Example
+=======
+
+  class Entry < ActiveRecord::Base
+    validates_plaintext_of :title
+  end
+
+  entry = Entry.new( :title => "<a>link</a>" )
+  entry.valid?               # => false
+
+Copyright (c) 2009 Beyond, released under the MIT license
